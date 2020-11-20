@@ -1,0 +1,10 @@
+1.First, cd to the directory where we want to store our code, then run django-admin startproject newapp
+2.This will create a newapp directory in our current directory.
+3.Then: cd newapp.
+4.Now, to create our app, we run: python manage.py startapp newapp
+5.Inside newapp package (containing __init__.py) create an empty celery.py file.
+6.Inside the newapp package, create empty forms.py and tasks.py. The task.py is where we put the functions/codes
+that need to be put in the background. These are usually slow or time-consuming tasks such as training machine learning
+models. The forms.py contain the Django Forms that will be receiving input information from the user.
+7.We create a template directory that will contain our simple html pages.
+8.Run rabbitmq-server start .
