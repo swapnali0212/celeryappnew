@@ -5,7 +5,6 @@ from django.shortcuts import render
 from celery.result import AsyncResult
 from django.views.decorators.http import require_http_methods, require_GET
 
-
 @require_http_methods(["GET", "POST"])
 def run(request):
     if request.method == "POST":
@@ -15,7 +14,7 @@ def run(request):
             item_name = data['item_name']
             item_status = data['item_status']
             process.delay(item_name=item_name, item_status=item_status)
-            return render(request, 'job.html',
+            return render(request, 'item.html',
                           context={'form': itemForm,
                                    'message': f'{item_status} started...'})
     else:

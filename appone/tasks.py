@@ -1,8 +1,8 @@
 from newapp.celery import app
 from appone.models import Tasks
 from time import sleep
+from celery import shared_task
 import random
-
 
 @app.task(bind=True)
 def process(self, item_name=None, item_status=None):
