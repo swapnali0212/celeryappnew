@@ -4,12 +4,6 @@ from time import sleep
 from celery import shared_task
 import random
 
-
-
-@app.task
-def add(x, y):
-    return x / y
-
 @app.task(bind=True)
 def process(self, item_name=None, item_status=None):
 
