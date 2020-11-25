@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from appone import views
+from appone import views, tasks
 
 app_name = 'appone'
 
